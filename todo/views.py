@@ -12,3 +12,6 @@ def createtask(request):
     todo.save()
     output = "Created todo: %s" % todo.todo_text
     return HttpResponse(output)
+
+def showform(request):
+    return render(request, 'todo/create.html',  {})

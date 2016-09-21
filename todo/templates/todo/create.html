@@ -1,0 +1,10 @@
+<h1>Create a todo:</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/tasks/create/" method="post">
+{% csrf_token %}
+    <input type="text" name="todo-name" id="todo-name" />
+    <label for="todo-name">What do you want to do?</label><br />
+<input type="submit" value="Create" />
+</form>
