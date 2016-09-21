@@ -5,8 +5,7 @@ from .models import Todo
 
 def tasklist(request):
     todos = Todo.objects.all()
-    output = ", ".join([t.todo_text for t in todos])
-    return HttpResponse(output)
+    return render(request, 'todo/index.html',  {'todos':todos})
 
 def createtask(request):
     todo = Todo(todo_text="Get eggs")
